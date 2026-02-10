@@ -6,19 +6,7 @@ Charul Mathur
 ## Date:
 30-01-2026
 
-## Project Overview
-TripAdvisor is the most popular travel website and it stores data for almost all restaurants, showing locations (even latitude and longitude coordinates), restaurant descriptions, user ratings and reviews, and many more aspects.
-This project aims to explore Restaurant Performance, Popularity, and Cuisine Diversity in the UK & France.
-
-- **Objective:** Identify the key drivers behind restaurant ratings—such as cuisine type, price range, and vegetarian options—and to compare how these factors differ between France and the UK.  
-- **Approach:** Analyze top-rated vs most-reviewed restaurants, cuisine diversity, Correlation between: Rating & review count, Price range & rating, and Cuisine diversity & rating.
-- **Dataset:** [Tripadvisor European Restaurants](https://www.kaggle.com/datasets/stefanoleone992/tripadvisor-european-restaurants).
-
-## Final project presentation
-The results from the analysis can be found in the presentation slides of the project:
-https://www.canva.com/design/DAG_JUJuBIQ/gW0EBv0VvxmcK_l6w3X5Qw/edit?utm_content=DAG_JUJuBIQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
-
-## Tools & Libraries
+## 🛠️ Tech Stack & Tools
 - Python 3  
 - Pandas (data manipulation)  
 - NumPy (numerical operations)  
@@ -29,9 +17,22 @@ https://www.canva.com/design/DAG_JUJuBIQ/gW0EBv0VvxmcK_l6w3X5Qw/edit?utm_content
 - MySQL Workbench (sql queries)
 - Canva (slides)
 
+## Project Overview
+TripAdvisor is the most popular travel website and it stores data for almost all restaurants, showing locations (even latitude and longitude coordinates), restaurant descriptions, user ratings and reviews, and many more aspects.
+This project aims to explore Restaurant Performance, Popularity, and Cuisine Diversity in the UK & France.
+
+- **Objective:** Identify the key drivers behind restaurant ratings-such as cuisine type, price range, and vegetarian options-and to compare how these factors differ between France and the UK.  
+- **Approach:** Analyze top-rated vs most-reviewed restaurants, cuisine diversity, Correlation between: Rating & review count, Price range & rating, and Cuisine diversity & rating.
+- **Dataset:** [Tripadvisor European Restaurants](https://www.kaggle.com/datasets/stefanoleone992/tripadvisor-european-restaurants).
+
+## Final project presentation
+The results from the analysis can be found [here](https://www.canva.com/design/DAG_JUJuBIQ/gW0EBv0VvxmcK_l6w3X5Qw/edit?utm_content=DAG_JUJuBIQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton).
+
 ## Day 1 - Project Planning
 ### 1. Create project documentation
 - Create Google doc to simplify the tasks & planning.
+
+---
 
 ## Day 2 - Project Initiation & Data Selection
 On Day 2 I focused on dataset selection and cleaning. 
@@ -54,32 +55,28 @@ https://www.kaggle.com/datasets/stefanoleone992/tripadvisor-european-restaurants
 - Restricted analysis to France and the UK for cross-country comparison
        
 **Dataset Features:**
-- restaurant_name  
-- country  
-- city  
-- latitude  
-- longitude  
-- claimed  
-- awards  
-- top_tags  
-- price_range  
-- meals  
+- restaurant_name
+- country
+- region
+- province
+- city
+- latitude
+- longitude
+- price_range
+- meals
 - cuisines
-- special_diets
-- features
 - vegetarian_friendly
-- 'vegan_options
+- vegan_options
 - gluten_free
-- original_open_hours
-- open_days_per_week
 - avg_rating
 - total_reviews_count
 - default_language
-- excellent
-- terrible
-- primary_cuisine
-- cuisine_list
-- is_Indian'  
+- meals_list
+- is_english
+- is_vegetarian
+- rating_category
+- meals_count
+- vegetarian_flag  
 
 This dataset is useful for restaurant research, such as identifying the most_reviewed restaurant and vegetarian-friendly options.
 
@@ -93,6 +90,8 @@ The original dataset was almost clean, but I cleaned it using several techniques
 
 ### 4. Created a Github Repository for the Project:
 https://github.com/CharulMathur4592/tripadvisor_restaurants_analysis
+
+---
 
 ## Day 3 – Data Examination and Hypothesis
 
@@ -108,6 +107,8 @@ On Day 3, we began understanding the dataset and created the questions for the f
 - Overall, what is the most common cuisine in each country.
 - Does Indian restaurants hold any place in the list?
 
+---
+
 ## Day 4 – More Exploratory Data Analysis
 
 ### 4. Indian Cuisine Distribution
@@ -119,30 +120,44 @@ On Day 3, we began understanding the dataset and created the questions for the f
 
 ### 7. Meal-Type Distribution
 
+---
+
 ## Day 5 – Performed Hypothesis Testing 
 
 ### 1. English Language Distribution (France vs UK)
 - Research Question: Is there a statistically significant difference in the proportion of restaurants using English as the default language between France and the UK?
 
-
 ### 2. Vegetarian Adoption
 - Research Question
 Is there a statistically significant difference in the adoption of vegetarian-friendly restaurants between France and the UK?
+
+---
 
 ## Day 6 - SQL Analysis
 
 ### 1. Create ERD Diagram
 - MIRO
 - DrawDB
-
-## Day 7 - Create Database 
+- Create Database 
 - Import Tables
 - Create CSV of the tables
 - Import Data
 
+---
+
+## Day 7 - Tableau
+- Create graphs in Tableau
+- Various Analysis in sheets
+- Create Dashboard
+- Create storyline 
+
+---
+
 ## Day 8 - Work on Presentation 
 - Gather data & select theme
 - Work on slides in Canva
+
+---
 
 ### Day 9 - Conclusions & Assembling Everythin
 - Gathering python notebooks
@@ -162,11 +177,15 @@ https://miro.com/app/board/uXjVGM5Srpk=/?share_link_id=322717149994
 Than I translate the chart to DrawDB to get code for SQL, for practise purposes. 
 https://www.drawdb.app/editor?shareId=f7079e9360428c84cc1f17fc944fda54
 
-We had the chart images in Figure folder. 
-
 ### 2. Final project presentation
 The results from the analysis can be found in the presentation slides of the project:
 https://www.canva.com/design/DAG_JUJuBIQ/gW0EBv0VvxmcK_l6w3X5Qw/edit?utm_content=DAG_JUJuBIQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 
-This project helped me working indivisually on data analysis, and Python-based visualization while exploring restaurant industry with a deep analysis of European Restaurants.
+### 3. Trello Board Link:
+https://trello.com/invite/b/69806df9874072a5ebae36d0/ATTI3f965e32816303b12145af335f4e0a61F4001FC5/tripadvisor-restaurant-analysis
+
+### 4. Tableau Dashboard Link:
+https://public.tableau.com/views/tripadvisor_restaurant_analysis/VegetarianRestaurantsbyCountry?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link
+
+This project helped me working individually on data analysis, and Python-based visualization while exploring restaurant industry with a deep analysis of European Restaurants.
 

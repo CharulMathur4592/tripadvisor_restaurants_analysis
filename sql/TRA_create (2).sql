@@ -1,12 +1,12 @@
 CREATE TABLE IF NOT EXISTS `restaurant` (
 	`restaurant_id` INTEGER NOT NULL AUTO_INCREMENT UNIQUE,
-	`name` VARCHAR(255) NOT NULL,
+	`restaurant_name` VARCHAR(255) NOT NULL,
 	`claimed` VARCHAR(255) NOT NULL,
 	`awards` VARCHAR(255) NOT NULL,
 	`open_days_per_week` FLOAT NOT NULL,
 	`original_open_hours` VARCHAR(255) NOT NULL,
 	`location_id` INTEGER NOT NULL,
-	`price_range_id` VARCHAR(255),
+	`price_id` INTEGER NOT NULL,
 	PRIMARY KEY(`restaurant_id`)
 );
 
@@ -22,14 +22,14 @@ CREATE TABLE IF NOT EXISTS `location` (
 
 CREATE TABLE IF NOT EXISTS `city` (
 	`city_id` INTEGER NOT NULL AUTO_INCREMENT UNIQUE,
-	`name` VARCHAR(255) NOT NULL,
+	`city_name` VARCHAR(255) NOT NULL,
 	PRIMARY KEY(`city_id`)
 );
 
 
 CREATE TABLE IF NOT EXISTS `country` (
 	`country_id` INTEGER NOT NULL AUTO_INCREMENT UNIQUE,
-	`name` VARCHAR(255) NOT NULL,
+	`country_name` VARCHAR(255) NOT NULL,
 	`city_id` INTEGER NOT NULL,
 	PRIMARY KEY(`country_id`)
 );
@@ -50,13 +50,14 @@ CREATE TABLE IF NOT EXISTS `review_summary` (
 	`total_reviews_count` FLOAT,
 	`excellent` FLOAT,
 	`terrible` FLOAT,
+	`restaurant_id` INTEGER NOT NULL,
 	PRIMARY KEY(`review_id`)
 );
 
 
 CREATE TABLE IF NOT EXISTS `language` (
 	`language_id` INTEGER NOT NULL AUTO_INCREMENT UNIQUE,
-	`name` VARCHAR(255) NOT NULL,
+	`language_name` VARCHAR(255) NOT NULL,
 	PRIMARY KEY(`language_id`)
 );
 
@@ -68,7 +69,7 @@ CREATE TABLE IF NOT EXISTS `meals` (
 );
 
 
-CREATE TABLE IF NOT EXISTS `price_range` (
+CREATE TABLE IF NOT EXISTS `price` (
 	`price_id` INTEGER NOT NULL AUTO_INCREMENT UNIQUE,
 	`price_range` VARCHAR(255),
 	PRIMARY KEY(`price_id`)
@@ -100,10 +101,7 @@ CREATE TABLE IF NOT EXISTS `restaurant_language` (
 
 
 ALTER TABLE `restaurant`
-ADD FOREIGN KEY(`restaurant_id`) REFERENCES `review_summary`(`review_id`)
-ON UPDATE NO ACTION ON DELETE NO ACTION;
-ALTER TABLE `restaurant`
-ADD FOREIGN KEY(`restaurant_id`) REFERENCES `price_range`(`price_id`)
+ADD FOREIGN KEY(`restaurant_id`) REFERENCES `price`(`price_id`)
 ON UPDATE NO ACTION ON DELETE NO ACTION;
 ALTER TABLE `restaurant`
 ADD FOREIGN KEY(`location_id`) REFERENCES `location`(`location_id`)
@@ -120,18 +118,21 @@ ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE `restaurant_language`
 ADD FOREIGN KEY(`language_id`) REFERENCES `language`(`language_id`)
 ON UPDATE CASCADE ON DELETE CASCADE;
-ALTER TABLE `restaurant`
-ADD FOREIGN KEY(`price_range_id`) REFERENCES `price_range`(`price_range`)
-ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE `restaurant_dietary_option`
 ADD FOREIGN KEY(`diet_id`) REFERENCES `dietary_options`(`diet_id`)
 ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE `country`
 ADD FOREIGN KEY(`city_id`) REFERENCES `city`(`city_id`)
 ON UPDATE CASCADE ON DELETE CASCADE;
-ALTER TABLE `restaurant_dietary_option`
-ADD FOREIGN KEY(`id`) REFERENCES `restaurant`(`restaurant_id`)
-ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE `location`
 ADD FOREIGN KEY(`city_id`) REFERENCES `city`(`city_id`)
 ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE `restaurant`
+ADD FOREIGN KEY(`price_id`) REFERENCES `price`(`price_id`)
+ON UPDATE NO ACTION ON DELETE NO ACTION;
+ALTER TABLE `restaurant`
+ADD FOREIGN KEY(`restaurant_id`) REFERENCES `restaurant_dietary_option`(`restaurant_id`)
+ON UPDATE NO ACTION ON DELETE NO ACTION;
+ALTER TABLE `review_summary`
+ADD FOREIGN KEY(`restaurant_id`) REFERENCES `restaurant`(`restaurant_id`)
+ON UPDATE NO ACTION ON DELETE NO ACTION;

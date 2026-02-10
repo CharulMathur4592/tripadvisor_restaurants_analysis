@@ -3,10 +3,6 @@ USE restaurant_analysis;
 CREATE TABLE IF NOT EXISTS `restaurant` (
 	`restaurant_id` INTEGER NOT NULL AUTO_INCREMENT UNIQUE,
 	`restaurant_name` VARCHAR(255) NOT NULL,
-	`claimed` VARCHAR(255) NOT NULL,
-	`awards` VARCHAR(255) NOT NULL,
-	`open_days_per_week` FLOAT NOT NULL,
-	`original_open_hours` VARCHAR(255) NOT NULL,
 	`location_id` INTEGER NOT NULL,
 	`price_id` INTEGER NOT NULL,
     `review_id` INTEGER NOT NULL,
@@ -51,8 +47,6 @@ CREATE TABLE IF NOT EXISTS `review_summary` (
 	`review_id` INTEGER NOT NULL AUTO_INCREMENT UNIQUE,
 	`avg_rating` FLOAT,
 	`total_reviews_count` FLOAT,
-	`excellent` FLOAT,
-	`terrible` FLOAT,
 	PRIMARY KEY(`review_id`)
 );
 
