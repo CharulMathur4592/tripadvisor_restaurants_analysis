@@ -171,10 +171,10 @@ Is there a statistically significant difference in the adoption of vegetarian-fr
 
 ### 1. Relationship charts
 
-I drew a Relationship chart in Miro from our database, for practise purposes. 
+Miro:
 https://miro.com/app/board/uXjVGM5Srpk=/?share_link_id=322717149994
 
-Than I translate the chart to DrawDB to get code for SQL, for practise purposes. 
+ERD:
 https://www.drawdb.app/editor?shareId=f7079e9360428c84cc1f17fc944fda54
 
 ### 2. Final project presentation
@@ -185,7 +185,7 @@ https://www.canva.com/design/DAG_JUJuBIQ/gW0EBv0VvxmcK_l6w3X5Qw/edit?utm_content
 https://trello.com/invite/b/69806df9874072a5ebae36d0/ATTI3f965e32816303b12145af335f4e0a61F4001FC5/tripadvisor-restaurant-analysis
 
 ### 4. Tableau Dashboard Link:
-https://public.tableau.com/views/tripadvisor_restaurant_analysis/VegetarianRestaurantsbyCountry?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link
+https://public.tableau.com/app/profile/charul.mathur/viz/tripadvisor_restaurant_analysis/RestaurantInsightsDashboardCountryComparison?publish=yes
 
 This project helped me working individually on data analysis, and Python-based visualization while exploring restaurant industry with a deep analysis of European Restaurants.
 
